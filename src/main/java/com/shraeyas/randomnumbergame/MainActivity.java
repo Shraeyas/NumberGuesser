@@ -8,6 +8,8 @@ import android.widget.Toast;
 
 import java.util.Random;
 
+import static android.R.attr.label;
+
 public class MainActivity extends AppCompatActivity
 {
 
@@ -25,9 +27,20 @@ public class MainActivity extends AppCompatActivity
     {
         //int i = rand();
 
-        EditText et = (EditText) findViewById(R.id.editText);
-        Integer num = Integer.parseInt(et.getText().toString());
+        EditText et ;
+        Integer num;
 
+        try
+        {
+            et = (EditText) findViewById(R.id.editText);
+            num = Integer.parseInt(et.getText().toString());
+        }
+
+        catch(NumberFormatException e)
+        {
+            Toast.makeText(MainActivity.this, "Please Enter A number First", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         //while(i!=num)
         {
@@ -44,7 +57,7 @@ public class MainActivity extends AppCompatActivity
 
             else
             {
-                Toast.makeText(MainActivity.this, "Thats Right", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, i + ", Yeah, That's Right, Lets do it One More Time", Toast.LENGTH_SHORT).show();
                 i = rand();
             }
             //et =
