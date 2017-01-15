@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity
 
             else
             {
-                Toast.makeText(MainActivity.this, "Thats Right", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, i + ", Yeah, That's Right, Lets do it One More Time", Toast.LENGTH_SHORT).show();
                 i = rand();
             }
             //et =
